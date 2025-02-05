@@ -1,11 +1,21 @@
 pipeline {
     agent any
-    
+
     stages {
-        stage('build') {
+        stage('build')
+        {
+            steps{
+                echo 'Build App'
+            }
+        }
+        stage('Test') {
             steps {
-                sh 'python mossad.py'
-             
+                echo 'Test App'
+            }
+        }
+        stage('Deploy'){
+            steps{
+              sh 'python mossad.py'
             }
         }
     }
